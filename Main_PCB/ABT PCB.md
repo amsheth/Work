@@ -1,5 +1,5 @@
 Hey, This is a main PCB for the work that I have done.
-I would suggest you that you download the GRB files as a whole. The PCB somewhat looks like this:
+I would suggest you that you download the GRB files as a whole. The PCB somewhat looks like this rn (I will try updating this as soon as I make a new one.):
 ![image](https://user-images.githubusercontent.com/45959802/211195690-f7ffd6b2-19a6-47fc-9efa-f690e19731f6.png)
 ![image](https://user-images.githubusercontent.com/45959802/211195707-5686a561-9742-4e82-8f2a-c7be4d7042a9.png)
 The layered view:
