@@ -3,6 +3,6 @@ I would suggest you that you download the GRB files as a whole. This is what the
 <!-- ![image](https://user-images.githubusercontent.com/45959802/211195725-e7094c48-b94b-49dc-b3df-4082b863f839.png) -->
 <img src="https://user-images.githubusercontent.com/45959802/211195725-e7094c48-b94b-49dc-b3df-4082b863f839.png" width="600">
 Since Then I have updated the PCB to add Boron and the Charging system via Solar Panel. The new PCB's look like:
-![PCBF](https://github.com/amsheth/Work/assets/45959802/e866a806-7da7-4504-8698-e2e7e4470534 = 250x)
-![PCBB](https://github.com/amsheth/Work/assets/45959802/e1919a9d-257e-41fc-8a9c-9874fcff0c1a = 250x)
-![PCBL](https://github.com/amsheth/Work/assets/45959802/984c091a-96d2-4b21-a784-d92d8b74c328 = 250x)
+<img src="https://github.com/amsheth/Work/assets/45959802/e866a806-7da7-4504-8698-e2e7e4470534" width="600">
+<img src="https://github.com/amsheth/Work/assets/45959802/e1919a9d-257e-41fc-8a9c-9874fcff0c1a" width="600">
+<img src="https://github.com/amsheth/Work/assets/45959802/984c091a-96d2-4b21-a784-d92d8b74c328" width="600">
