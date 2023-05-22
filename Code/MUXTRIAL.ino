@@ -91,6 +91,8 @@ void triad(int sel){
   
   //Serial.println(sizeof(dat0));
   Serial.print(dat0);
+  Serial1.write(dat0);
+  delay(1000);
   logfile.print(dat0);
 }
 void rgb(int sel){
@@ -103,6 +105,8 @@ void rgb(int sel){
   col=c;
   sprintf(dat4,"RGB, SEN%u, R:%u\tG:%u\tB:%u\tC:%u\n",sel,red,green,blue,col);                  
   Serial.print(dat4);
+  Serial1.write(dat4);
+  delay(1000);
   logfile.print(dat4);
 }
 
@@ -114,6 +118,8 @@ void thermal(int sel){
   //char A[5];char B[5];
   sprintf(dat3,"Thermal,SEN%u, Ambient = %8f*C\tObject = %8f*C\n",sel,A3,B3);
   Serial.print(dat3);
+  Serial1.write(dat3);
+  delay(1000);
   logfile.print(dat3);
 }
 
@@ -125,6 +131,8 @@ void env(int sel){
     float BMPh = (bmp.readHumidity());
     sprintf(dat2,"BME280, SEN%u, BMP280 temp:%f, Pressure:%f, Elevation:%f, Humidity:%f \n",sel,BMPt,BMPp,BMPa,BMPh);
     Serial.print(dat2);
+    Serial1.write(dat2);
+    delay(1000);
     logfile.print(dat2);
 }
 
@@ -142,10 +150,11 @@ void env(int sel){
 void setup()
 {
 Wire.begin();
-Serial.begin(9600);
- /* while (!Serial) {
-    ; // wait for serial port to connect. Needed for native USB port only
-  }*/ // decomment if using serial
+Serial.begin(115200);
+Serial1.begin(9600);
+  //while (!Serial) {
+    //; // wait for serial port to connect. Needed for native USB port only
+  //} // decomment if using serial
 //pinMode(13, OUTPUT);
 if (!SD.begin(cardselect)) {
    Serial.println("No SD Card");
@@ -214,7 +223,7 @@ Serial.println(filename);
         if (tcs.begin()) {
           Serial.println("Found RGB sensor");
          } 
-         if (bmp.begin(0x76)){
+         if (bmp.begin(0x77)){
           Serial.println("Found BME sensor");
          }
       }
@@ -277,6 +286,8 @@ void loop()
   DateTime x = rtc.now();
   sprintf(dat5,"%04d/%02d/%02d,%02d:%02d:%02d \n",x.year(),x.month(),x.day(),x.hour(),x.minute(),x.second());
   Serial.print(dat5);
+  Serial1.write(dat5);
+  delay(1000);
   logfile.print(dat5);
   ///////////////////////////////////////////////////
   for (int i=0;i<8;i++){
@@ -292,7 +303,7 @@ void loop()
     else if (adr[i]==73){
       triad(i);
     }
-    else if (adr[i]==118){
+    else if (adr[i]==119){
       env(i);
     }
     
