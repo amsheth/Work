@@ -136,7 +136,7 @@ Serial.println(filename);
     //digitalWrite(13, LOW);
     Serial.print("/n");
     Serial.println("_____________________________ Code Begins _____________________________");}
-    ```
+```
 ## Triad Sensor
 We are going to use the Sparkfun AS7265X library for the Triad sensor. The data is collected in 18 different string values (even if they are actually floating numbers.). We will have to define the sensor name. Now we for everytime we take a measurement we will have to go like "\textit{sensor}.takeMeasurements()". This takes the measurements from the sensors and stores it in a heap, now to pop the values of the heap we will call the getcalibrated\textbf{X}() function where \textbf{X} denotes the letters and its wavelength corresponding to it.
 
