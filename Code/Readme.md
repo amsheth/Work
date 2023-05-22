@@ -96,8 +96,6 @@ Once we have saved this value in a string we have to go through a few more steps
 ```
 void triad(int sel){
   tcaselect(sel);
-  //digitalWrite(13, HIGH);
-
   sensor.takeMeasurements();
   
   String  a = String(sensor.getCalibratedA(), 2);
@@ -128,13 +126,12 @@ void triad(int sel){
   a.toCharArray(A, 9); b.toCharArray(B, 9); c.toCharArray(C, 9); d.toCharArray(D, 9); e.toCharArray(E, 9); f.toCharArray(F, 9);
   g.toCharArray(G, 9); h.toCharArray(H, 9); i.toCharArray(I, 9); j.toCharArray(J, 9); k.toCharArray(K, 9); l.toCharArray(L, 9);
   m.toCharArray(M, 9); n.toCharArray(N, 9); o.toCharArray(O, 9); p.toCharArray(P, 9); q.toCharArray(Q, 9); r.toCharArray(R, 9);
-  //IMPORTANT
-  //edit this line every time you build a new sensor
+
   sprintf(dat0, "Triad, UP, SEN%u,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s\n",/* now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second(), now.unixtime(),*/sel, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R);
-  /*%04d/%02d/%02d,%02d:%02d:%02d,%010d,*/
   
-  //Serial.println(sizeof(dat0));
   Serial.print(dat0);
+  Serial1.write(dat0);
+  delay(1000);
   logfile.print(dat0);
 }
 ```
