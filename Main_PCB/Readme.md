@@ -20,12 +20,17 @@ The PCB can be easily assembled by attaching the [Stacking Headers](https://www.
 - Soldering Paste
 - Smoke dissipator
 - Electric Tape
-- [Stacking Headers](https://www.adafruit.com/product/2830) x 3
-- [I2C Multiplexer](https://www.adafruit.com/product/2717)
-- [Adalogger FeatherWing](https://www.adafruit.com/product/2922)
-- [Adafruit Feather M0 Express](https://www.adafruit.com/product/3403)
-- [Boron LTE CAT-M1](https://store.particle.io/products/boron-lte-cat-m1-noram-with-ethersim-4th-gen)
-- [Adafruit Universal USB / DC / Solar LiPo charger](https://www.adafruit.com/product/4755)
+-  [Stacking Header](https://www.adafruit.com/product/2830)
+-  [Adafruit Feather M0 Basic Proto - ATSAMD21 Cortex M0](https://www.adafruit.com/product/2772)
+-  [Adalogger FeatherWing - RTC + SD Add-on For All Feather Boards](https://www.adafruit.com/product/2922)
+-  [SparkFun Triad Spectroscopy Sensor - AS7265x (Qwiic)](https://www.sparkfun.com/products/15050)
+-  [Melexis Contact-less Infrared Sensor - MLX90614 3V](https://www.adafruit.com/product/1747)
+-  [RGB COLOR SENSOR WITH IR FILTER](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1334/5629426)
+-  [TCA9548A I2C Multiplexer](https://www.adafruit.com/product/2717)
+-  [Adafruit BME280 I2C or SPI Temperature Humidity Pressure Sensor](https://www.adafruit.com/product/2652)
+-  [3.7V 6600mAh Lithium Ion Battery Pack](https://www.adafruit.com/product/353)
+-  [CR1220 Coin Battery*](https://www.adafruit.com/product/380)
+
 
 
 ## Instructions
