@@ -27,6 +27,18 @@ The PCB can be easily assembled by attaching the [Stacking Headers](https://www.
 - [Boron LTE CAT-M1](https://store.particle.io/products/boron-lte-cat-m1-noram-with-ethersim-4th-gen)
 - [Adafruit Universal USB / DC / Solar LiPo charger](https://www.adafruit.com/product/4755)
 
-# Finished Product
+
+## Instructions
+[How to Solder](https://www.youtube.com/watch?v=Z0joOKaQ43A)
+- Solder the I2C Multiplexer onto the PCB.
+- We will now solder the Headers to Adalogger first but we will not trim the headers as we are going to use the headers to solder it again on the PCB it should look like this:
+- We will now solder the headers to the Vin and GND and the I2C lines. We will also trim the headers after they have been soldered.
+- We now Solder the Boron into the socket.
+- Its is very important that we coved the trimmed and soldered headers on the board with electric tape to prevent any short circuit with the charger.
+- Last but not the Least we will now solder the Charger but we will flip the PCB and attach it on the Bottom as it allows us to save space and seperate the charging connectors from other connectors.
+
+
+
+## Finished Product
 
 This is what a finished PCB looks like:
