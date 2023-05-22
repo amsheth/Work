@@ -49,8 +49,7 @@ Now in the void Setup() loop we will create the testing conditions where, we can
 
 ## Triad Sensor
 We are going to use the Sparkfun AS7265X library for the Triad sensor. The data is collected in 18 different string values (even if they are actually floating numbers.). We will have to define the sensor name. Now we for everytime we take a measurement we will have to go like "\textit{sensor}.takeMeasurements()". This takes the measurements from the sensors and stores it in a heap, now to pop the values of the heap we will call the getcalibrated\textbf{X}() function where \textbf{X} denotes the letters and its wavelength corresponding to it.
-\begin{center}
-    \begin{longtable}[c]{| m{2.5cm}| m{2.5cm}| m{2.5cm}|}
+
         \hline
         Letter & Wavelength & Color (Hex) \\[0.5ex]
         \hline\hline
@@ -90,7 +89,7 @@ We are going to use the Sparkfun AS7265X library for the Triad sensor. The data 
         \hline
         L & 940nm & Infrared \\
         \hline       
-    \end{longtable}
+
 \end{center}
 Once we have saved this value in a string we have to go through a few more steps like converting the string into a char and then into an array of char and saving it in the data variables.
 ### Psuedocode:
