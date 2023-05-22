@@ -161,10 +161,8 @@ The thermal sensor uses the MLX90614 library. The data is saved as a double valu
 ```
 void thermal(int sel){
   tcaselect(sel);
-  //digitalWrite(13, HIGH);
   double A3=(mlx.readAmbientTempC());
   double B3= mlx.readObjectTempC();
-  //char A[5];char B[5];
   sprintf(dat3,"Thermal,SEN%u, Ambient = %8f*C\tObject = %8f*C\n",sel,A3,B3);
   Serial.print(dat3);
   Serial1.write(dat3);
