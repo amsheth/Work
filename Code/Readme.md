@@ -139,14 +139,58 @@ void triad(int sel){
 ## RGB Sensor
 For the RGB sensor we are using the TCS34725 Library. When creating the constructor we are going to allot a gain and integration time too. The values from the sensor are saved as a "uint16\_t", however the Cpp doesn't support it like C used to do, so we have to convert these into int or float values.
 ### Psuedocode:
+```
+void rgb(int sel){
+  tcaselect(sel);
+  uint16_t r, g, b, c;
+  tcs.getRawData(&r, &g, &b, &c);
+  red=r;
+  blue=b;
+  green=g;
+  col=c;
+  sprintf(dat4,"RGB, SEN%u, R:%u\tG:%u\tB:%u\tC:%u\n",sel,red,green,blue,col);                  
+  Serial.print(dat4);
+  Serial1.write(dat4);
+  delay(1000);
+  logfile.print(dat4);
+}
+```
 ## Thermal sensor
 The thermal sensor uses the MLX90614 library. The data is saved as a double value. The sensor can take both the object temperature and the ambient temperature. 
 ### Psuedocode
+```
+void thermal(int sel){
+  tcaselect(sel);
+  //digitalWrite(13, HIGH);
+  double A3=(mlx.readAmbientTempC());
+  double B3= mlx.readObjectTempC();
+  //char A[5];char B[5];
+  sprintf(dat3,"Thermal,SEN%u, Ambient = %8f*C\tObject = %8f*C\n",sel,A3,B3);
+  Serial.print(dat3);
+  Serial1.write(dat3);
+  delay(1000);
+  logfile.print(dat3);
+}
+```
+
 ## Environment Sensor
 The environment sensor is the sensor which is used to measure pressure, altitude, humidty and temperature. 
 ### Psuedocode
 
-
+```
+void env(int sel){
+   tcaselect(sel);
+    float BMPt = (bmp.readTemperature());                               // read the temperature
+    float BMPp = (bmp.readPressure() / 100.0F);                         // read the pressure
+    float BMPa = (bmp.readAltitude(SEALEVELPRESSURE_HPA));  
+    float BMPh = (bmp.readHumidity());
+    sprintf(dat2,"BME280, SEN%u, BMP280 temp:%f, Pressure:%f, Elevation:%f, Humidity:%f \n",sel,BMPt,BMPp,BMPa,BMPh);
+    Serial.print(dat2);
+    Serial1.write(dat2);
+    delay(1000);
+    logfile.print(dat2);
+}
+```
 
 # Issues Faced
 Sometimes the Serial1 would not upload the right values to the Boron. It was due to main 3 reasons:
