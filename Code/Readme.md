@@ -272,6 +272,43 @@ void env(int sel){
 }
 ```
 
+## The Loop
+This Loop is used to run the code. The Loop code is used to instantiate the modules that we just made.
+### Psuedocode
+
+```
+void loop() 
+{
+  DateTime x = rtc.now();
+  sprintf(dat5,"%04d/%02d/%02d,%02d:%02d:%02d \n",x.year(),x.month(),x.day(),x.hour(),x.minute(),x.second());
+  Serial.print(dat5);
+  Serial1.write(dat5);
+  delay(1000);
+  logfile.print(dat5);
+  ///////////////////////////////////////////////////
+  for (int i=0;i<8;i++){
+    if (adr[i]==0){
+      continue;
+    }
+    else if (adr[i]==90){
+     thermal(i); 
+    }
+    else if (adr[i]==41){
+      rgb(i);
+    }
+    else if (adr[i]==73){
+      triad(i);
+    }
+    else if (adr[i]==119){
+      env(i);
+    }
+    
+  }  
+  logfile.flush();
+  delay(60000);
+}
+```
+
 # Issues Faced
 Sometimes the Serial1 would not upload the right values to the Boron. It was due to main 3 reasons:
 - The Serial was displaying some outputs and it was taking up some amount of power.
