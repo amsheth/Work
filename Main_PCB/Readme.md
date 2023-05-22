@@ -14,6 +14,16 @@ Since Then I have updated the PCB to add Boron and the Charging system via Solar
 # Building
 The PCB can be easily assembled by attaching the [Stacking Headers](https://www.adafruit.com/product/2830) on the PCB for all the spots except the bottom where the Charging port will come. Since the [I2C Multiplexer](https://www.adafruit.com/product/2717) is usually not likely to fail and we will never upgrade it again without changing the PCB we can solder it to the board, hence we will only need 3 packs of stacking headers per PCB if we want to make it interchangeable.
 
+## Equipments Required.
+- Solder
+- Soldering iron
+- Soldering Paste
+- Smoke dissipator
+- Electric Tape
+- [Stacking Headers](https://www.adafruit.com/product/2830) x 3
+- [I2C Multiplexer](https://www.adafruit.com/product/2717)
+- 
+
 # Finished Product
 
 This is what a finished PCB looks like:
