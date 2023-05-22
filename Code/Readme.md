@@ -82,18 +82,12 @@ logfile = SD.open(filename, FILE_WRITE);
 if (!logfile) {
   Serial.print("Couldn't create ");
   Serial.println(filename);
-  //error(4);
 }
-
-
-
 Serial.print("Writing to ");
 Serial.println(filename);
-
     for (int j=0;j<7;j++){
       adr[j]=0;
     }
-    //while (!Serial); //decomment this line if using serial
     delay(1000);
     Serial.println("\nTCAScanner ready!");
     
@@ -132,8 +126,6 @@ Serial.println(filename);
       Serial.print(adr[j]);
       Serial.print(",");
     }
-    //pinMode(13,OUTPUT);
-    //digitalWrite(13, LOW);
     Serial.print("/n");
     Serial.println("_____________________________ Code Begins _____________________________");}
 ```
