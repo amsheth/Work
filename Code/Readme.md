@@ -90,43 +90,55 @@ We are going to use the Sparkfun AS7265X library for the Triad sensor. The data 
         L & 940nm & Infrared \\
         \hline       
 
-\end{center}
 Once we have saved this value in a string we have to go through a few more steps like converting the string into a char and then into an array of char and saving it in the data variables.
 ### Psuedocode:
-\begin{tabbing}
-AS726\=5X sensor; \\
-\>sensor.takeMeasurements(); \\
-\>String  a = String(sensor.getCalibratedA(), 2); \\
-\>String b = String(sensor.getCalibratedB(), 2);\\
-\>String c = String(sensor.getCalibratedC(), 2); \\
-\>String d = String(sensor.getCalibratedD(), 2); \\
-\>String e = String(sensor.getCalibratedE(), 2); \\
-\>String f = String(sensor.getCalibratedF(), 2); \\
- \\
-\>String g = String(sensor.getCalibratedG(), 2); \\
-\>String h = String(sensor.getCalibratedH(), 2); \\
-\>String i = String(sensor.getCalibratedR(), 2); \\
-\>String j = String(sensor.getCalibratedI(), 2); \\
-\>String k = String(sensor.getCalibratedS(), 2); \\
-\>String l = String(sensor.getCalibratedJ(), 2); \\
-\\
-\>String m = String(sensor.getCalibratedT(), 2); \\
-\>String n = String(sensor.getCalibratedU(), 2); \\
-\>String o = String(sensor.getCalibratedV(), 2); \\
-\>String p = String(sensor.getCalibratedW(), 2); \\
-\>String q = String(sensor.getCalibratedK(), 2); \\
-\>String r = String(sensor.getCalibratedL(), 2); \\
-\\
-\>char A[9]; char B[9]; char C[9]; char D[9]; char E[9]; char F[9]; \\
-\>char G[9]; char H[9]; char I[9]; char J[9]; char K[9]; char L[9]; \\
-\>char M[9]; char N[9]; char O[9]; char P[9]; char Q[9]; char R[9]; \\
-\\
-\>a.toCharArray(A, 9); b.toCharArray(B, 9); c.toCharArray(C, 9); \\ \>d.toCharArray(D, 9); e.toCharArray(E, 9); f.toCharArray(F, 9); \\
-\>g.toCharArray(G, 9); h.toCharArray(H, 9); i.toCharArray(I, 9); \\ \>j.toCharArray(J, 9); k.toCharArray(K, 9); l.toCharArray(L, 9); \\
-\>m.toCharArray(M, 9); n.toCharArray(N, 9); o.toCharArray(O, 9); \\ \>p.toCharArray(P, 9); q.toCharArray(Q, 9); r.toCharArray(R, 9); \\
-\\
-sprintf(dat0, "Triad, UP, SEN \%u,\%9s,\%9s,\%9s,\%9s,\%9s,\%9s ,\%9s,\%9s,\\\%9s,\%9s,\%9s,\%9s,\%9s,\%9s,\%9s,\%9s,\%9s,\%9s",sel, A, B, C, D, E, F,\\ G, H, I, J, K, L, M, N, O, P, Q, R);
-\end{tabbing}
+
+'''
+void triad(int sel){
+  tcaselect(sel);
+  //digitalWrite(13, HIGH);
+
+  sensor.takeMeasurements();
+  
+  String  a = String(sensor.getCalibratedA(), 2);
+  String b = String(sensor.getCalibratedB(), 2);
+  String c = String(sensor.getCalibratedC(), 2);
+  String d = String(sensor.getCalibratedD(), 2);
+  String e = String(sensor.getCalibratedE(), 2);
+  String f = String(sensor.getCalibratedF(), 2);
+
+  String g = String(sensor.getCalibratedG(), 2);
+  String h = String(sensor.getCalibratedH(), 2);
+  String i = String(sensor.getCalibratedR(), 2);
+  String j = String(sensor.getCalibratedI(), 2);
+  String k = String(sensor.getCalibratedS(), 2);
+  String l = String(sensor.getCalibratedJ(), 2);
+
+  String m = String(sensor.getCalibratedT(), 2);
+  String n = String(sensor.getCalibratedU(), 2);
+  String o = String(sensor.getCalibratedV(), 2);
+  String p = String(sensor.getCalibratedW(), 2);
+  String q = String(sensor.getCalibratedK(), 2);
+  String r = String(sensor.getCalibratedL(), 2);
+  
+  char A[9]; char B[9]; char C[9]; char D[9]; char E[9]; char F[9];
+  char G[9]; char H[9]; char I[9]; char J[9]; char K[9]; char L[9];
+  char M[9]; char N[9]; char O[9]; char P[9]; char Q[9]; char R[9];
+  
+  a.toCharArray(A, 9); b.toCharArray(B, 9); c.toCharArray(C, 9); d.toCharArray(D, 9); e.toCharArray(E, 9); f.toCharArray(F, 9);
+  g.toCharArray(G, 9); h.toCharArray(H, 9); i.toCharArray(I, 9); j.toCharArray(J, 9); k.toCharArray(K, 9); l.toCharArray(L, 9);
+  m.toCharArray(M, 9); n.toCharArray(N, 9); o.toCharArray(O, 9); p.toCharArray(P, 9); q.toCharArray(Q, 9); r.toCharArray(R, 9);
+  //IMPORTANT
+  //edit this line every time you build a new sensor
+  sprintf(dat0, "Triad, UP, SEN%u,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s,%9s\n",/* now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second(), now.unixtime(),*/sel, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R);
+  /*%04d/%02d/%02d,%02d:%02d:%02d,%010d,*/
+  
+  //Serial.println(sizeof(dat0));
+  Serial.print(dat0);
+  logfile.print(dat0);
+}
+'''
+
 ## RGB Sensor
 For the RGB sensor we are using the TCS34725 Library. When creating the constructor we are going to allot a gain and integration time too. The values from the sensor are saved as a "uint16\_t", however the Cpp doesn't support it like C used to do, so we have to convert these into int or float values.
 ### Psuedocode:
