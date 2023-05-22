@@ -22,7 +22,10 @@ The PCB can be easily assembled by attaching the [Stacking Headers](https://www.
 - Electric Tape
 - [Stacking Headers](https://www.adafruit.com/product/2830) x 3
 - [I2C Multiplexer](https://www.adafruit.com/product/2717)
-- 
+- [Adalogger FeatherWing](https://www.adafruit.com/product/2922)
+- [Adafruit Feather M0 Express](https://www.adafruit.com/product/3403)
+- [Boron LTE CAT-M1](https://store.particle.io/products/boron-lte-cat-m1-noram-with-ethersim-4th-gen)
+- [Adafruit Universal USB / DC / Solar LiPo charger](https://www.adafruit.com/product/4755)
 
 # Finished Product
 
