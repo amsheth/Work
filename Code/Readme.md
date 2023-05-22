@@ -93,7 +93,7 @@ We are going to use the Sparkfun AS7265X library for the Triad sensor. The data 
 Once we have saved this value in a string we have to go through a few more steps like converting the string into a char and then into an array of char and saving it in the data variables.
 ### Psuedocode:
 
-'''
+```
 void triad(int sel){
   tcaselect(sel);
   //digitalWrite(13, HIGH);
@@ -137,7 +137,7 @@ void triad(int sel){
   Serial.print(dat0);
   logfile.print(dat0);
 }
-'''
+```
 
 ## RGB Sensor
 For the RGB sensor we are using the TCS34725 Library. When creating the constructor we are going to allot a gain and integration time too. The values from the sensor are saved as a "uint16\_t", however the Cpp doesn't support it like C used to do, so we have to convert these into int or float values.
