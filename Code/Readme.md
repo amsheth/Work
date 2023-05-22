@@ -46,7 +46,97 @@ I am using the UART connection to send and recieve data via the Boron. The Seria
 We are going to setup the code and the libraries in the IDE. Please make sure that you have downloaded the libraries that have been specified in Preamble 1.2. Now we will initialize the libraries. Now each and every sensor has a specified struct and constructor which is expected to be called before using. Since our goal is not just to save the data but to also use it for future we want to make sure that we know which all sensors is it using and at which multiplexer select is it at, we are going to use predefined char array of an optimal length. \newline
 Now in the void Setup() loop we will create the testing conditions where, we can test to see if the sensors are responding and what are its I2C values. This part is not really important but can be used for debugging mainly. In the setup we will begin the Wire and Serial library first and foremost, then we see if the SD card is inserted or not and if we can open the filename in the SD card. Now we iterate through the TCAselect from the Multiplexer to see if there is a sensor and if the sensor is found then we look for its I2C to confirm the type of the sensor and save it in an array to be used in the loop().
 ### Psuedocode:
+```
+void setup()
+{
+Wire.begin();
+Serial.begin(115200);
+Serial1.begin(9600);
+  //while (!Serial) {
+    //; // wait for serial port to connect. Needed for native USB port only
+  //} // decomment if using serial
+//pinMode(13, OUTPUT);
+if (!SD.begin(cardselect)) {
+   Serial.println("No SD Card");
+   while(1);
+  }
+  Serial.println("SD OK");
+if (!rtc.begin()) {
+    Serial.println("No RTC");
+  }
+rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  rtc.start();
+char filename[15];
+strcpy(filename, "/ABC.TXT");
+/*for (uint8_t i = 0; i < 100; i++) {
+    filename[7] = '0' + i/10;
+    filename[8] = '0' + i%10;
+    // create if does not exist, do not open existing, write, sync after write
+    if (! SD.exists(filename)) {
+      break;
+    }
+  }*/
+logfile = SD.open(filename, FILE_WRITE);
 
+
+if (!logfile) {
+  Serial.print("Couldn't create ");
+  Serial.println(filename);
+  //error(4);
+}
+
+
+
+Serial.print("Writing to ");
+Serial.println(filename);
+
+    for (int j=0;j<7;j++){
+      adr[j]=0;
+    }
+    //while (!Serial); //decomment this line if using serial
+    delay(1000);
+    Serial.println("\nTCAScanner ready!");
+    
+    for (uint8_t t=0; t<8; t++) {
+      tcaselect(t);
+      Serial.print("TCA Port #"); Serial.println(t);
+
+      for (uint8_t addr = 0; addr<=127; addr++) {
+        if (addr == TCAADDR || addr == 104 ) continue;
+
+        Wire.beginTransmission(addr);
+        if (!Wire.endTransmission()) {
+          Serial.print("Found I2C 0x");  Serial.println(addr,HEX);
+          if (addr!=104){
+          adr[t]=addr;}   
+          bool status;
+          delay(100);
+          Serial.begin(9600);      
+          if (mlx.begin()) {
+          Serial.println("Found MLX990614 sensor");
+          Serial.print("Emissivity = "); Serial.println(mlx.readEmissivity());
+        };
+         if (sensor.begin()==true) {
+          Serial.println("Found AS7265X sensor");
+          //sensor.disableIndicator();
+        }
+        if (tcs.begin()) {
+          Serial.println("Found RGB sensor");
+         } 
+         if (bmp.begin(0x77)){
+          Serial.println("Found BME sensor");
+         }
+      }
+    }}
+    for (int j=0;j<8;j++){
+      Serial.print(adr[j]);
+      Serial.print(",");
+    }
+    //pinMode(13,OUTPUT);
+    //digitalWrite(13, LOW);
+    Serial.print("/n");
+    Serial.println("_____________________________ Code Begins _____________________________");}
+    ```
 ## Triad Sensor
 We are going to use the Sparkfun AS7265X library for the Triad sensor. The data is collected in 18 different string values (even if they are actually floating numbers.). We will have to define the sensor name. Now we for everytime we take a measurement we will have to go like "\textit{sensor}.takeMeasurements()". This takes the measurements from the sensors and stores it in a heap, now to pop the values of the heap we will call the getcalibrated\textbf{X}() function where \textbf{X} denotes the letters and its wavelength corresponding to it.
 
