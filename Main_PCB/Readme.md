@@ -15,11 +15,11 @@ Since Then I have updated the PCB to add Boron and the Charging system via Solar
 The PCB can be easily assembled by attaching the [Stacking Headers](https://www.adafruit.com/product/2830) on the PCB for all the spots except the bottom where the Charging port will come. Since the [I2C Multiplexer](https://www.adafruit.com/product/2717) is usually not likely to fail and we will never upgrade it again without changing the PCB we can solder it to the board, hence we will only need 3 packs of stacking headers per PCB if we want to make it interchangeable.
 
 ## Equipments Required.
-- Solder
-- Soldering iron
-- Soldering Paste
-- Smoke dissipator
-- Electric Tape
+-  Solder
+-  Soldering iron
+-  Soldering Paste
+-  Smoke dissipator
+-  Electric Tape
 -  [Stacking Header](https://www.adafruit.com/product/2830)
 -  [Adafruit Feather M0 Basic Proto - ATSAMD21 Cortex M0](https://www.adafruit.com/product/2772)
 -  [Adalogger FeatherWing - RTC + SD Add-on For All Feather Boards](https://www.adafruit.com/product/2922)
@@ -30,6 +30,8 @@ The PCB can be easily assembled by attaching the [Stacking Headers](https://www.
 -  [Adafruit BME280 I2C or SPI Temperature Humidity Pressure Sensor](https://www.adafruit.com/product/2652)
 -  [3.7V 6600mAh Lithium Ion Battery Pack](https://www.adafruit.com/product/353)
 -  [CR1220 Coin Battery*](https://www.adafruit.com/product/380)
+-  [Boron LTE CAT-M1](https://store.particle.io/products/boron-lte-cat-m1-noram-with-ethersim-4th-gen)
+-  [Adafruit Universal USB / DC / Solar LiPo charger](https://www.adafruit.com/product/4755)
 
 
 
