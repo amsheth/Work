@@ -101,18 +101,18 @@ We are going to use the Sparkfun AS7265X library for the Triad sensor. The data 
 
 |Letter | Wavelength | Color (Hex) |
 | :---: | :---: | :---: |
-|A | 410nm | `#7e00db` |
-|B | 435nm | `#2300ff` |
-|C | 460nm | `#007bff` |    
-|D | 485nm | `#00eaff` |
-|E | 510nm | `#00ff00` |
-|F | 535nm | `#70ff00` |
-|G | 560nm | `#c3ff00` |
-|H | 585nm | `#ffef00` |
-|R | 610nm | `#ff9b00` |
-|I | 645nm | `#ff0000` |
-|S | 680nm | `#cc0000` |
-|J | 705nm | `#c90000` |
+|A | 410nm | `#7E00DB` |
+|B | 435nm | `#2300FF` |
+|C | 460nm | `#007bFF` |    
+|D | 485nm | `#00EAFF` |
+|E | 510nm | `#00FF00` |
+|F | 535nm | `#70FF00` |
+|G | 560nm | `#c3FF00` |
+|H | 585nm | `#FFEF00` |
+|R | 610nm | `#FF9b00` |
+|I | 645nm | `#FF0000` |
+|S | 680nm | `#CC0000` |
+|J | 705nm | `#C90000` |
 |T | 730nm | `#990000` |
 |U | 760nm | `#940000` |
 |V | 810nm | Infrared |
