@@ -99,45 +99,27 @@ Serial.println(filename);
 ## Triad Sensor
 We are going to use the Sparkfun AS7265X library for the Triad sensor. The data is collected in 18 different string values (even if they are actually floating numbers.). We will have to define the sensor name. Now we for everytime we take a measurement we will have to go like "\textit{sensor}.takeMeasurements()". This takes the measurements from the sensors and stores it in a heap, now to pop the values of the heap we will call the getcalibrated\textbf{X}() function where \textbf{X} denotes the letters and its wavelength corresponding to it.
 
-        \hline
-        Letter & Wavelength & Color (Hex) \\[0.5ex]
-        \hline\hline
-        A & 410nm & \#7e00db \\
-        \hline
-        B & 435nm & \#2300ff \\
-        \hline
-        C & 460nm & \#007bff \\
-        \hline        
-        D & 485nm & \#00eaff \\
-        \hline
-        E & 510nm & \#00ff00 \\
-        \hline
-        F & 535nm & \#70ff00 \\
-        \hline
-        G & 560nm & \#c3ff00 \\
-        \hline
-        H & 585nm & \#ffef00 \\
-        \hline
-        R & 610nm & \#ff9b00 \\
-        \hline
-        I & 645nm & \#ff0000 \\
-        \hline
-        S & 680nm & \#cc0000 \\
-        \hline
-        J & 705nm & \#c90000 \\
-        \hline
-        T & 730nm & \#990000 \\
-        \hline
-        U & 760nm & \#940000 \\
-        \hline
-        V & 810nm & Infrared \\
-        \hline
-        W & 860nm & Infrared \\
-        \hline
-        K & 900nm & Infrared \\
-        \hline
-        L & 940nm & Infrared \\
-        \hline       
+|Letter | Wavelength | Color (Hex) |
+| :---: | :---: | :---: |
+|A | 410nm | \#7e00db |
+|B | 435nm | \#2300ff |
+|C |460nm | \#007bff |    
+|D | 485nm | \#00eaff |
+|E | 510nm | \#00ff00 |
+|F | 535nm | \#70ff00 |
+|G | 560nm | \#c3ff00 |
+|H | 585nm | \#ffef00 |
+|R | 610nm | \#ff9b00 |
+|I | 645nm | \#ff0000 |
+|S | 680nm | \#cc0000 |
+|J | 705nm | \#c90000 |
+|T | 730nm | \#990000 |
+|U | 760nm | \#940000 |
+|V | 810nm | Infrared |
+|W | 860nm | Infrared |
+|K | 900nm | Infrared |
+|L | 940nm | Infrared |
+
 
 Once we have saved this value in a string we have to go through a few more steps like converting the string into a char and then into an array of char and saving it in the data variables.
 ### Psuedocode:
