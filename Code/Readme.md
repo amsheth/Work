@@ -254,8 +254,34 @@ void loop()
 
 # Code For Boron Particle
 ## Setup
+The Boron is only required to read the values and upload it over the LTE network test. This makes Boron a secondary equipment which is not very important for the functioning of the Main system. The setup for Boron is very simple as its a seperate entity. We just initialize the UART connection as this is what we will be using to read the values from the Feather M0.
+```
+#include "Particle.h"
 
+SYSTEM_THREAD(ENABLED);
+String message = "";
 
+const char *eventName = "pump_system";
+
+void setup() {
+    Serial1.begin(115200);
+    //Serial.begin(115200);
+   
+    Time.zone(-6);
+}
+char a[150];
+```
+## Loop
+The Loop contains an if statement which asks the UART if it has space to read the values, then read the values incoming and save it in the string message. This string is then Published over the LTE network. We can set the Publish to PRIVATE as we dont want the other Particle devices to use this function as a trigger to read the values abruptly.
+
+```
+void loop() {
+    if(Serial1.available()>0){
+        message=Serial1.readStringUntil('\n');
+        Particle.publish(eventName, message, PRIVATE);
+    }
+ }
+```
 
 
 # How do the 2 codes link?
