@@ -258,6 +258,14 @@ void loop()
 }
 ```
 
+
+# Code For Boron Particle
+## Setup
+
+
+
+
+
 # Issues Faced
 Sometimes the Serial1 would not upload the right values to the Boron. It was due to main 3 reasons:
 - The Serial was displaying some outputs and it was taking up some amount of power.
