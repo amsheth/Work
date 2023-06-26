@@ -11,11 +11,8 @@ Since Then I have updated the PCB to add Boron and the Charging system via Solar
 <img src="https://github.com/amsheth/Work/assets/45959802/984c091a-96d2-4b21-a784-d92d8b74c328" width="600">
 
 The new PCB with LCD implemented looks likes:
-![PCBF](https://github.com/amsheth/Work/assets/45959802/2ca8f9a9-99af-4302-8670-3974454a14a8)
 <img src="https://github.com/amsheth/Work/assets/45959802/2ca8f9a9-99af-4302-8670-3974454a14a8" width="600">
-![PCBB](https://github.com/amsheth/Work/assets/45959802/d28be31d-ae7e-4571-bede-d813d6d9598b)
 <img src="https://github.com/amsheth/Work/assets/45959802/d28be31d-ae7e-4571-bede-d813d6d9598b" width="600">
-![PCBL](https://github.com/amsheth/Work/assets/45959802/349fc0d4-6bfa-4f08-9d3b-bcd6cbbf470b)
 <img src="https://github.com/amsheth/Work/assets/45959802/349fc0d4-6bfa-4f08-9d3b-bcd6cbbf470b" width="600">
 
 
